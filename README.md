@@ -1,19 +1,21 @@
 # YouKnowMCP
 
-**A curated knowledge search system for handcrafted personal knowledge bases**
+**A curated knowledge search system for your handcrafted personal digital brain**
 
-YouKnowMCP is designed for **carefully curated, human-refined knowledge** rather than raw data aggregation. Transform your thoughtfully structured markdown knowledge files into a searchable, intelligent MCP (Model Context Protocol) server that respects the deliberate curation you’ve invested in your knowledge.
+YouKnowMCP is designed for **carefully curated, human-refined knowledge** rather than raw data aggregation. Transform your thoughtfully structured markdown (or other) knowledge files into a searchable, intelligent MCP (Model Context Protocol) server that respects the deliberate curation you’ve invested in your knowledge.
 
-Unlike traditional note-taking tools that mix raw capture with processed information, or AI systems that aggregate vast amounts of unvetted data, YouKnowMCP is built for **quality over quantity** - serving your personally distilled, verified, and structured insights.
+Unlike traditional note-taking tools that mix raw capture with processed information, or AI systems that aggregate vast amounts of unvetted data, YouKnowMCP is built for **quality over quantity** - serving your personally distilled, verified, and structured insights to be used with your preferred AI model.
+
+The knowlege (KnowFiles) are plug-and-play, and you can curate your information, be that book summaries, personal recipes, life events or whatever you want to record and make it available in a friendly way to your LLM. So instead of uploading your whole book library, you only make available the information bits (KnowBits) of your content that you created using your preferred way (AI summary, personal notes, etc).
 
 ## 🎯 Core Philosophy
 
-- **Handcrafted knowledge**: Built for curated insights, not automated content aggregation
+- **Handcrafted knowledge**: Built your KnowFiles for curated insights, not automated content aggregation
 - **Human-refined data**: Each knowledge item represents deliberate synthesis and understanding
 - **Separation of concerns**: Knowledge curation happens elsewhere, YouKnowMCP handles intelligent retrieval
 - **Domain isolation**: Each knowledge area maintains its own conceptual boundaries and expertise
 - **API-first**: Access your curated knowledge through any interface via MCP protocol
-- **Multilingual support**: Handle knowledge in multiple languages within the same domain
+- **Multilingual support**: Handle knowledge in multiple languages within the same domain via keyword matching (manually created).
 
 ## 🔍 Quality-Focused Approach
 
@@ -38,17 +40,21 @@ Knowledge Files (.md) → Domain Parser → Unified Database → MCP Server → 
 
 ### Knowledge Organization
 
-**Knowfiles** (your `.md` files) contain **knowbytes** (individual knowledge items) organized by **domains**:
+**Knowfiles** (your `.md` files) contain **knowbits** (individual knowledge items) organized by **domains**:
 
 ```
 your_knowledge/
-├── chanoyu/
-│   ├── rikyu_wabi_knowledge.md
+├── classical_music/
+│   ├── greatest_componists.md
 │   └── key_figures.md
-├── vegan_cheese/
-│   └── fermentation_science.md
-└── cultures/
-    └── strain_specifications.md
+├── japanese_crafts/
+│   └── pottery.md
+│   └── tea.md
+└── great_civilizations/
+│   └── china.md
+│   └── egypt.md
+│   └── pre-colombian.md
+    └── roman.md
 ```
 
 ### Domain Configuration
@@ -56,36 +62,36 @@ your_knowledge/
 Each domain is defined in `config/domains.yaml`:
 
 ```yaml
-chanoyu:
-  name: "Japanese Tea Ceremony"
-  keywords: ["tea ceremony", "wabi", "chanoyu", "rikyū"]
-  concepts: ["wabi-sabi", "hakobi temae", "ichigo ichie"]
-  search_hints: ["Tea ceremony history, philosophy, or masters"]
+classical_music:
+  name: "European classical music"
+  keywords: ["barroque", "romantic", "modern"]
+  concepts: ["chamber music", "orchestra"]
+  search_hints: ["Chamber music pieces, two violas, Bach"]
   
-vegan_cheese:
-  name: "Vegan Cheese Making"
-  keywords: ["cheese", "fermentation", "cashew", "cultures", "aging"]
-  concepts: ["protein denaturation", "pH control", "mold cultures"]
-  search_hints: ["Vegan cheese recipes, techniques, or science"]
+japanese_crafts:
+  name: "Japanese Crafts"
+  keywords: ["joinery", "temple", "tea hut"]
+  concepts: ["joinery types", "traditional woods", "wood shaving"]
+  search_hints: ["Joinery for buddhist temple roofs"]
 ```
 
 ## 🔍 Smart Search Capabilities
 
 ### Domain-Aware Queries
 
-- **Auto-detection**: “What cultures work for cashew fermentation?” → searches `vegan_cheese` domain
+- **Auto-detection**: “What cultures have built pyramids?” → searches `great_civilizations` domain
 - **Explicit targeting**: Search specific domains when you know the context
 - **Cross-domain search**: When concepts might span multiple areas
 
 ### Entity Normalization
 
-- **Multilingual entities**: “Rikyū” = “Sen no Rikyū” = “千利休”
-- **Technical synonyms**: “transglutaminase” = “Vzyme”
-- **Domain-specific context**: “fermentation” means different things in cheese vs culture domains
+- **Multilingual entities**: “Ryoba” = “Ryoba Saw” = “両刃鋸”
+- **Technical synonyms**: “double-edged saw” = “nokogiri”
+- **Domain-specific context**: “classical music” means different things in classical music and  vs great civilizations
 
 ### Intelligent Results
 
-- **Concept expansion**: Search for “tea ceremony masters” finds all related historical figures
+- **Concept expansion**: Search for “great compositors” finds all related historical figures
 - **Relationship awareness**: Understands connections between concepts within domains
 - **Provenance tracking**: Know which knowledge file contributed each result
 
@@ -99,7 +105,7 @@ cd youknowmcp
 pip install -e .
 ```
 
-### 2. Prepare Your Knowledge Files
+### 2. Prepare Your Knowledge Files (KnowFile)
 
 Create markdown files with domain headers:
 
@@ -120,7 +126,7 @@ Domain description and scope
 ## Resources
 - Source materials and references
 
-## Notes
+## Notes (KeyBits)
 
 ### 2024-01-15 - Quote
 **Category:** Technical Parameters
@@ -142,7 +148,7 @@ domains:
     languages: ["english"]
 ```
 
-### 4. Parse and Serve
+### 4. Parse and Serve (TBD)
 
 ```bash
 # Parse your knowledge files
@@ -155,7 +161,7 @@ youknowmcp serve --port 8000
 youknowmcp test-query "your search term"
 ```
 
-### 5. Connect via MCP
+### 5. Connect via MCP (TBD)
 
 Add to your MCP client configuration:
 
@@ -191,11 +197,11 @@ Add to your MCP client configuration:
 - **Technical specifications**: International standards with regional variations
 - **Historical sources**: Primary documents in original languages with expert translations
 
-## 🛠️ Technical Features
+## 🛠️ Technical Features (TBD)
 
 ### Database Design
 
-- **SQLite-first**: Simple deployment, easy backup, portable knowledge base
+- **SQLite-first**: Simple deployment, easy backup, portable knowledge base 
 - **Full-text search**: Advanced querying with FTS5 for fast, relevant results
 - **Relationship tracking**: Entities, aliases, and conceptual cross-references
 - **Migration path**: Scale to PostgreSQL when your knowledge base grows
@@ -212,12 +218,12 @@ Add to your MCP client configuration:
 - **Domain plugins**: Add specialized processing for specific expertise areas
 - **Export capabilities**: Generate reports, summaries, or structured datasets
 
-## 🤝 Contributing
+##  Contributing
 
 YouKnowMCP is designed for people who value **thoughtful knowledge curation** over information hoarding:
 
 - **Quality examples**: Share well-structured knowledge formats and curation methodologies
-- **Parser contributions**: Support different markdown structures while preserving human organization
+- **Parser contributions**: Support different markdown (or other text-file) structures while preserving human organization
 - **Domain templates**: Example configurations for common areas of expertise
 - **Curation tools**: Better ways to structure, verify, and cross-reference knowledge
 - **Search enhancements**: Improved entity recognition, semantic understanding, relationship detection
@@ -231,7 +237,7 @@ We prioritize contributions that:
 - Support thoughtful knowledge organization
 - Maintain domain boundaries and conceptual clarity
 
-## 📋 Roadmap
+## 📋 Roadmap (TBD)
 
 - ✅ Project architecture and design
 - 🔄 Core parsing and domain detection system
@@ -243,7 +249,7 @@ We prioritize contributions that:
 - ⏳ Web interface for knowledge exploration and validation
 - ⏳ Import/export tools for popular knowledge management formats
 
-## 📖 Documentation
+## 📖 Documentation (TBD)
 
 - [Knowledge File Format Guide](docs/knowledge-format.md)
 - [Domain Configuration Reference](docs/domain-config.md)
@@ -256,8 +262,8 @@ MIT License - see <LICENSE> for details.
 
 ## Acknowledgments
 
-Built for people who believe that **quality curation beats quantity aggregation**, and that human expertise deserves intelligent, respectful search tools.
+Built for those that seek **quality curation beats quantity aggregation**, and believe that human expertise deserves intelligent, respectful search database.
 
 -----
 
-**YouKnowMCP**: Because your carefully curated knowledge deserves intelligent search, not just keyword matching.​​​​​​​​​​​​​​​​
+**YouKnowMCP**: Feed your AI with your hand-crafted knowlege bits
