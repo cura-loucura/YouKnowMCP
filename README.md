@@ -1,16 +1,16 @@
 # YouKnowMCP
 
-**A curated knowledge search system for your handcrafted personal digital brain**
+** Feed your AI with your hand-crafted knowlege bits: A curated knowledge search system for your handcrafted personal digital brain**
 
 YouKnowMCP is designed for **carefully curated, human-refined knowledge** rather than raw data aggregation. Transform your thoughtfully structured markdown (or other) knowledge files into a searchable, intelligent MCP (Model Context Protocol) server that respects the deliberate curation you’ve invested in your knowledge.
 
 Unlike traditional note-taking tools that mix raw capture with processed information, or AI systems that aggregate vast amounts of unvetted data, YouKnowMCP is built for **quality over quantity** - serving your personally distilled, verified, and structured insights to be used with your preferred AI model.
 
-The knowlege (KnowFiles) are plug-and-play, and you can curate your information, be that book summaries, personal recipes, life events or whatever you want to record and make it available in a friendly way to your LLM. So instead of uploading your whole book library, you only make available the information bits (KnowBits) of your content that you created using your preferred way (AI summary, personal notes, etc).
+The knowlege (KnowFiles) are mostly plug-and-play, and you can curate your information, be that book summaries, personal recipes, life events or whatever you want to record and make it available in a friendly way to your LLM. So, instead of uploading your whole book library, you only make available the information bits (KnowBits) of your content that you created using your preferred way (AI summary, personal notes, etc) to any of your LLM, be in your phone, desktop or other systems.
 
 ## 🎯 Core Philosophy
 
-- **Handcrafted knowledge**: Built your KnowFiles for curated insights, not automated content aggregation
+- **Handcrafted knowledge**: Build your KnowFiles for curated insights, not automated content aggregation
 - **Human-refined data**: Each knowledge item represents deliberate synthesis and understanding
 - **Separation of concerns**: Knowledge curation happens elsewhere, YouKnowMCP handles intelligent retrieval
 - **Domain isolation**: Each knowledge area maintains its own conceptual boundaries and expertise
@@ -35,12 +35,12 @@ The knowlege (KnowFiles) are plug-and-play, and you can curate your information,
 ## 🏗️ Architecture Overview
 
 ```
-Knowledge Files (.md) → Domain Parser → Unified Database → MCP Server → Any Client
+Knowledge Files "KnowFiles" (.md) → Domain Parser → Unified Database → MCP Server → Any Client
 ```
 
 ### Knowledge Organization
 
-**Knowfiles** (your `.md` files) contain **knowbits** (individual knowledge items) organized by **domains**:
+**Knowfiles** (your `.md` files) contain **Knowbits** (individual knowledge items) organized by **domains**:
 
 ```
 your_knowledge/
@@ -83,7 +83,7 @@ japanese_crafts:
 - **Explicit targeting**: Search specific domains when you know the context
 - **Cross-domain search**: When concepts might span multiple areas
 
-### Entity Normalization
+### Entity Normalization via your own keywords
 
 - **Multilingual entities**: “Ryoba” = “Ryoba Saw” = “両刃鋸”
 - **Technical synonyms**: “double-edged saw” = “nokogiri”
@@ -95,7 +95,7 @@ japanese_crafts:
 - **Relationship awareness**: Understands connections between concepts within domains
 - **Provenance tracking**: Know which knowledge file contributed each result
 
-## 🚀 Getting Started
+## 🚀 Getting Started (TBD)
 
 ### 1. Install YouKnowMCP
 
@@ -229,8 +229,6 @@ YouKnowMCP is designed for people who value **thoughtful knowledge curation** ov
 - **Search enhancements**: Improved entity recognition, semantic understanding, relationship detection
 
 ### Contributing Guidelines
-
-We prioritize contributions that:
 
 - Respect human curation and expertise
 - Enhance search quality over search quantity
