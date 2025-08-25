@@ -67,6 +67,9 @@ your_knowledge/
     └── roman.md
 ```
 
+* The files don't need to follow this folder structure, they can all be connected simply by using the domain configuration as below.
+
+
 ### Domain Configuration
 
 Each domain is defined in `config/domains.yaml`:
