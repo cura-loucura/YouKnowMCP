@@ -1,6 +1,8 @@
 # YouKnowMCP
 
-** Feed your AI with your hand-crafted knowlege bits: A curated knowledge search system for your handcrafted personal digital brain**
+**Feed your AI Model with your handcrafted knowlege bits**
+
+A curated knowledge search system for your handcrafted personal digital brain
 
 YouKnowMCP is designed for **carefully curated, human-refined knowledge** rather than raw data aggregation. Transform your thoughtfully structured markdown (or other) knowledge files into a searchable, intelligent MCP (Model Context Protocol) server that respects the deliberate curation you’ve invested in your knowledge.
 
