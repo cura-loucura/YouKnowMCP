@@ -48,14 +48,22 @@ Knowledge Files "KnowFiles" (.md) → Domain Parser → Unified Database → MCP
 your_knowledge/
 ├── classical_music/
 │   ├── greatest_componists.md
+│   ├── my_favorite_book_quotes.md
+│   ├── my_favorite_pieces.md
+│   ├── my_own_collection.md
+│   ├── my_music_diary.md
 │   └── key_figures.md
 ├── japanese_crafts/
-│   └── pottery.md
+│   ├── pottery.md
+│   ├── my_favorite_techniques.md
 │   └── tea.md
 └── great_civilizations/
-│   └── china.md
-│   └── egypt.md
-│   └── pre-colombian.md
+│   ├── china.md
+│   ├── egypt.md
+│   ├── pre-colombian.md
+│   ├── a_favorite_book_summary.md
+│   ├── another_favorite_book_summary.md
+│   ├── personal_notes.md
     └── roman.md
 ```
 
