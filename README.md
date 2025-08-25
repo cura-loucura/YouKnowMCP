@@ -57,7 +57,7 @@ your_knowledge/
 │   ├── pottery.md
 │   ├── my_favorite_techniques.md
 │   └── tea.md
-└── great_civilizations/
+├── great_civilizations/
 │   ├── china.md
 │   ├── egypt.md
 │   ├── pre-colombian.md
